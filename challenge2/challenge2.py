@@ -17,6 +17,8 @@ class challenge2(unittest.TestCase):
         elem = driver.find_element_by_id("input-search")
         elem.send_keys("exotic")
         elem.send_keys(Keys.RETURN)
+        findporsche = self.driver.find_elements(By.XPATH, "//*[@id='serverSideDataTable']/tbody")
+        print(findporsche.__getattribute__("data-uname"))
 
 
     def tearDown(self):

@@ -11,18 +11,9 @@ class Challenge3(unittest.TestCase):
     def tearDown(self):
         self.driver.close()
 
-    def testchallenge3_for_loop(self):
-        self.driver.get("https://www.copart.com")
-        listofelements2 = self.driver.find_elements(By.XPATH, '//*[@ng-if="popularSearches"]//a')
-        for e in listofelements2:
-            print
-
     def test_challenge3(self):
         self.driver.get("https://www.copart.com")
         listofelements = self.driver.find_elements(By.XPATH, '//*[@ng-if="popularSearches"]//a')
-        for e in listofelements:
-            print(e.text)
-
         listofelements2= self.driver.find_elements(By.XPATH, '//*[@ng-if="popularSearches"]/../div[3]//a')
         count = 0
         while count < len(listofelements):
