@@ -12,13 +12,13 @@ class challenge2(unittest.TestCase):
     def test_challenge2(self):
         driver = self.driver
         driver.get("https://www.copart.com/")
-        pagetitle = driver.title
-        self.assertEqual("Auto Auction - Copart USA - Salvage Cars for Sale in Online Car Auctions", pagetitle, "title is not the same")
+        assert "Copart" in driver.title
         elem = driver.find_element_by_id("input-search")
-        elem.send_keys("exotic")
+        elem.send_keys("exotics")
         elem.send_keys(Keys.RETURN)
-        findporsche = self.driver.find_elements(By.XPATH, "//*[@id='serverSideDataTable']/tbody")
-        print(findporsche.__getattribute__("data-uname"))
+        findPorsche = driver.find_element(By.XPATH, '//table[@id="serverSideDataTable"]/tbody/tr/td[5]/span')
+        print(findPorsche.get_attribute("span"))
+
 
 
     def tearDown(self):

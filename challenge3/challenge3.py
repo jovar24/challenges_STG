@@ -14,7 +14,7 @@ class Challenge3(unittest.TestCase):
     def test_challenge3(self):
         self.driver.get("https://www.copart.com")
         listofelements = self.driver.find_elements(By.XPATH, '//*[@ng-if="popularSearches"]//a')
-        listofelements2= self.driver.find_elements(By.XPATH, '//*[@ng-if="popularSearches"]/../div[3]//a')
+        listofelements2 = self.driver.find_elements(By.XPATH, '//*[@ng-if="popularSearches"]/../div[3]//a')
         count = 0
         while count < len(listofelements):
             print(listofelements[count].text+":"+listofelements2[count].get_attribute("href"))
